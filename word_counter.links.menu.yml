@@ -1,0 +1,6 @@
+word_counter.settings:
+  title: 'Word counter setting'
+  description: 'Setting word counter article type content'
+  route_name: word_counter.settings
+  parent: system.admin
+  weight: 100

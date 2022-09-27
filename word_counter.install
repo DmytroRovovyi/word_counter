@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Word Counter module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function word_counter_install() {
+  $nodes = \Drupal::entityTypeManager()->getStorage('node')
+    ->loadByProperties(['type' => 'article']);
+  foreach ($nodes as $node) {
+    $node->field_word_counter->value = $node->field_word_counter->value;
+    $node->save();
+  }
+}

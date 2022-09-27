@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * This is a module for displaying the word counter for the content type of an article.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * @param NodeInterface $node
+ * Implements hook_node_presave().
+ */
+
+function word_counter_node_presave(NodeInterface $node): void {
+  if ($node->bundle() !== 'article' || !$node->hasField('body')) {
+    return;
+  }
+
+  $body = strip_tags($node->get('body')->value);
+  $node->set('field_word_counter', str_word_count($body));
+}

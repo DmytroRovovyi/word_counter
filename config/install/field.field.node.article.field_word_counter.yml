@@ -1,0 +1,23 @@
+uuid: 807f5406-01d4-49bc-96d1-c428e9ba5bc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_word_counter
+    - node.type.article
+id: node.article.field_word_counter
+field_name: field_word_counter
+entity_type: node
+bundle: article
+label: word_counter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ' words'
+field_type: integer
